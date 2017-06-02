@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    @IBAction func clickButton(sender: UIButton) {
+    @IBAction func clickButton(_ sender: UIButton) {
         view.endEditing(true)
 //        textView.placeholder = "非常对"
 //        textView.placeholderColor = UIColor.blueColor()

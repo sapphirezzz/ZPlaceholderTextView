@@ -22,7 +22,7 @@ pod "ZPlaceholderTextView"
 
 ## Author
 
-sapphirezzz, zhengzuanzhe@gmail.com
+Zack Zheng, zhengzuanzhe@gmail.com
 
 ## License
 
