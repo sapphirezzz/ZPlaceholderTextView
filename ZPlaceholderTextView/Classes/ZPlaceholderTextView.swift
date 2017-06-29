@@ -14,6 +14,7 @@ open class ZPlaceholderTextView: UITextView {
     fileprivate(set) var placeholderLabel: UILabel = {
         let label = UILabel(frame: CGRect.zero)
         label.backgroundColor = UIColor.clear
+        label.numberOfLines = 0
         label.textColor = UIColor.gray
         return label
     }()
@@ -21,6 +22,7 @@ open class ZPlaceholderTextView: UITextView {
     @IBInspectable open var placeholder: String? {
         didSet {
             placeholderLabel.text = placeholder
+            updatePlaceholderLabelFrame()
         }
     }
     
@@ -83,11 +85,15 @@ open class ZPlaceholderTextView: UITextView {
         let lineFragmentPadding = textContainer.lineFragmentPadding
         let topInsets = textContainerInset.top
         let width = bounds.width - 2 * lineFragmentPadding
-        let height: CGFloat = {
-            let font = self.font ?? UIFont.systemFont(ofSize: 14.0)
-            return font.lineHeight
-        }()
-        placeholderLabel.frame = CGRect.init(x: lineFragmentPadding, y: topInsets, width: width, height: height)
+        
+        let font = self.font ?? UIFont.systemFont(ofSize: 14.0)
+        
+        guard let placeholder = placeholder, placeholder.characters.count > 0 else {
+            placeholderLabel.frame = CGRect(x: lineFragmentPadding, y: topInsets, width: width, height: font.lineHeight)
+            return
+        }
+        let height = (placeholder as NSString).boundingRect(with: CGSize(width: width, height: 400), options: [NSStringDrawingOptions.usesLineFragmentOrigin], attributes: [NSFontAttributeName: font], context: nil).height
+        placeholderLabel.frame = CGRect(x: lineFragmentPadding, y: topInsets, width: width, height: height)
     }
 }
 

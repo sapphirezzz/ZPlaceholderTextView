@@ -19,7 +19,7 @@ class ViewController: UIViewController {
 
     @IBAction func clickButton(_ sender: UIButton) {
         view.endEditing(true)
-//        textView.placeholder = "非常对"
+        textView.placeholder = "吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭吃饭"
 //        textView.placeholderColor = UIColor.blueColor()
 //        textView.font = UIFont.systemFontOfSize(10)
 //        textView.text = "测试测试"
