@@ -92,7 +92,7 @@ open class ZPlaceholderTextView: UITextView {
             placeholderLabel.frame = CGRect(x: lineFragmentPadding, y: topInsets, width: width, height: font.lineHeight)
             return
         }
-        let height = (placeholder as NSString).boundingRect(with: CGSize(width: width, height: 400), options: [NSStringDrawingOptions.usesLineFragmentOrigin], attributes: [NSFontAttributeName: font], context: nil).height
+        let height = (placeholder as NSString).boundingRect(with: CGSize(width: width, height: 400), options: [NSStringDrawingOptions.usesLineFragmentOrigin], attributes: [NSAttributedStringKey.font: font], context: nil).height
         placeholderLabel.frame = CGRect(x: lineFragmentPadding, y: topInsets, width: width, height: height)
     }
 }
@@ -109,7 +109,7 @@ private extension ZPlaceholderTextView {
 }
 
 extension ZPlaceholderTextView {
-    func textViewDidBeginEditing(_ notification: Notification) -> Void {
+    @objc func textViewDidBeginEditing(_ notification: Notification) -> Void {
         if self.text.characters.count > 0 {
             placeholderLabel.isHidden = true
         }else {
@@ -117,7 +117,7 @@ extension ZPlaceholderTextView {
         }
     }
     
-    func textViewDidChange(_ notification: Notification) {
+    @objc func textViewDidChange(_ notification: Notification) {
         if self.text.characters.count > 0 {
             placeholderLabel.isHidden = true
         }else {
@@ -125,7 +125,7 @@ extension ZPlaceholderTextView {
         }
     }
     
-    func textViewDidEndEditing(_ notification: Notification) -> Void {
+    @objc func textViewDidEndEditing(_ notification: Notification) -> Void {
         if self.text.characters.count > 0 {
             placeholderLabel.isHidden = true
         }else {
