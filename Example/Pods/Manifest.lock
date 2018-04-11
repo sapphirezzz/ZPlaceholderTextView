@@ -1,16 +1,16 @@
 PODS:
-  - ZPlaceholderTextView (0.1.0)
+  - ZPlaceholderTextView (0.3.1)
 
 DEPENDENCIES:
   - ZPlaceholderTextView (from `../`)
 
 EXTERNAL SOURCES:
   ZPlaceholderTextView:
-    :path: "../"
+    :path: ../
 
 SPEC CHECKSUMS:
-  ZPlaceholderTextView: 155b7e75713dc9ee36548e8f4bfd1fa9b0b75058
+  ZPlaceholderTextView: 21b322a59be6bc765d8d082b49f4cbe3a394e6d1
 
-PODFILE CHECKSUM: ac3dc0e295ac16c777aef4669730ce6a9de17806
+PODFILE CHECKSUM: d75199e3132dfa15f47caf37a5d3ab09259d3dd5
 
-COCOAPODS: 1.1.0.beta.2
+COCOAPODS: 1.4.0

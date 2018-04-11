@@ -1,6 +1,6 @@
 {
   "name": "ZPlaceholderTextView",
-  "version": "0.1.0",
+  "version": "0.3.1",
   "summary": "A short description of ZPlaceholderTextView.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/sapphirezzz/ZPlaceholderTextView",
@@ -9,11 +9,11 @@
     "file": "LICENSE"
   },
   "authors": {
-    "sapphirezzz": "zhengzuanzhe@gmail.com"
+    "Zack Zheng": "zhengzuanzhe@gmail.com"
   },
   "source": {
     "git": "https://github.com/sapphirezzz/ZPlaceholderTextView.git",
-    "tag": "0.1.0"
+    "tag": "0.3.1"
   },
   "platforms": {
     "ios": "8.0"

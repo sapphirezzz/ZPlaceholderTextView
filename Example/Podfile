@@ -3,7 +3,4 @@ use_frameworks!
 target 'ZPlaceholderTextView_Example' do
   pod 'ZPlaceholderTextView', :path => '../'
 
-  target 'ZPlaceholderTextView_Tests' do
-    inherit! :search_paths
-  end
 end
