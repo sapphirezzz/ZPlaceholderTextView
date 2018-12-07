@@ -34,9 +34,9 @@ open class ZPlaceholderTextView: UITextView {
     
     deinit {
         print("\(self) deinit")
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UITextViewTextDidBeginEditing, object: self)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UITextViewTextDidEndEditing, object: self)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UITextViewTextDidChange, object: self)
+        NotificationCenter.default.removeObserver(self, name: UITextView.textDidBeginEditingNotification, object: self)
+        NotificationCenter.default.removeObserver(self, name: UITextView.textDidEndEditingNotification, object: self)
+        NotificationCenter.default.removeObserver(self, name: UITextView.textDidChangeNotification, object: self)
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -92,7 +92,7 @@ open class ZPlaceholderTextView: UITextView {
             placeholderLabel.frame = CGRect(x: lineFragmentPadding, y: topInsets, width: width, height: font.lineHeight)
             return
         }
-        let height = (placeholder as NSString).boundingRect(with: CGSize(width: width, height: 400), options: [NSStringDrawingOptions.usesLineFragmentOrigin], attributes: [NSAttributedStringKey.font: font], context: nil).height
+        let height = (placeholder as NSString).boundingRect(with: CGSize(width: width, height: 400), options: [NSStringDrawingOptions.usesLineFragmentOrigin], attributes: [NSAttributedString.Key.font: font], context: nil).height
         placeholderLabel.frame = CGRect(x: lineFragmentPadding, y: topInsets, width: width, height: height)
     }
 }
@@ -102,9 +102,9 @@ private extension ZPlaceholderTextView {
         placeholderLabel.font = self.font
         addSubview(placeholderLabel)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(ZPlaceholderTextView.textViewDidBeginEditing(_:)), name: NSNotification.Name.UITextViewTextDidBeginEditing, object: self)
-        NotificationCenter.default.addObserver(self, selector: #selector(ZPlaceholderTextView.textViewDidEndEditing(_:)), name: NSNotification.Name.UITextViewTextDidEndEditing, object: self)
-        NotificationCenter.default.addObserver(self, selector: #selector(ZPlaceholderTextView.textViewDidChange(_:)), name: NSNotification.Name.UITextViewTextDidChange, object: self)
+        NotificationCenter.default.addObserver(self, selector: #selector(ZPlaceholderTextView.textViewDidBeginEditing(_:)), name: UITextView.textDidBeginEditingNotification, object: self)
+        NotificationCenter.default.addObserver(self, selector: #selector(ZPlaceholderTextView.textViewDidEndEditing(_:)), name: UITextView.textDidEndEditingNotification, object: self)
+        NotificationCenter.default.addObserver(self, selector: #selector(ZPlaceholderTextView.textViewDidChange(_:)), name: UITextView.textDidChangeNotification, object: self)
     }
 }
 

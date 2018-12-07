@@ -28,7 +28,7 @@
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9F2CEA02942CCAC2739CC0CD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		A1E070E448EDE6201BAE4419 /* ZPlaceholderTextView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ZPlaceholderTextView.podspec; path = ../ZPlaceholderTextView.podspec; sourceTree = "<group>"; };
+		A1E070E448EDE6201BAE4419 /* ZPlaceholderTextView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ZPlaceholderTextView.podspec; path = ../ZPlaceholderTextView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B4D39F5BD509CDA83F72EF96 /* Pods-ZPlaceholderTextView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZPlaceholderTextView_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZPlaceholderTextView_Example/Pods-ZPlaceholderTextView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		CA159B0F07D3CAA06102D969 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		E3F2A2C845A0959D3D6449A3 /* Pods-ZPlaceholderTextView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZPlaceholderTextView_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZPlaceholderTextView_Tests/Pods-ZPlaceholderTextView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -131,7 +131,6 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				5D52F4ACBD7AC914A7D82494 /* [CP] Embed Pods Frameworks */,
-				196ADD81DB2B5BC3C4654121 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,21 +206,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		196ADD81DB2B5BC3C4654121 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZPlaceholderTextView_Example/Pods-ZPlaceholderTextView_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5D52F4ACBD7AC914A7D82494 /* [CP] Embed Pods Frameworks */ = {
@@ -326,6 +310,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -371,6 +356,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -389,7 +375,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -407,7 +393,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
