@@ -1,6 +1,0 @@
-framework module ZPlaceholderTextView {
-  umbrella header "ZPlaceholderTextView-umbrella.h"
-
-  export *
-  module * { export * }
-}

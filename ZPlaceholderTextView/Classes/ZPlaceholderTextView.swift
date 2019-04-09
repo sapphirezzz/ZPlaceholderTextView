@@ -63,7 +63,7 @@ open class ZPlaceholderTextView: UITextView {
     
     override open var text: String! {
         didSet {
-            if text.characters.count > 0 {
+            if text.count > 0 {
                 placeholderLabel.isHidden = true
             }else {
                 placeholderLabel.isHidden = false
@@ -73,7 +73,7 @@ open class ZPlaceholderTextView: UITextView {
     
     override open var attributedText: NSAttributedString! {
         didSet {
-            if attributedText.string.characters.count > 0 {
+            if attributedText.string.count > 0 {
                 placeholderLabel.isHidden = true
             }else {
                 placeholderLabel.isHidden = false
@@ -88,7 +88,7 @@ open class ZPlaceholderTextView: UITextView {
         
         let font = self.font ?? UIFont.systemFont(ofSize: 14.0)
         
-        guard let placeholder = placeholder, placeholder.characters.count > 0 else {
+        guard let placeholder = placeholder, placeholder.count > 0 else {
             placeholderLabel.frame = CGRect(x: lineFragmentPadding, y: topInsets, width: width, height: font.lineHeight)
             return
         }
@@ -110,7 +110,7 @@ private extension ZPlaceholderTextView {
 
 extension ZPlaceholderTextView {
     @objc func textViewDidBeginEditing(_ notification: Notification) -> Void {
-        if self.text.characters.count > 0 {
+        if self.text.count > 0 {
             placeholderLabel.isHidden = true
         }else {
             placeholderLabel.isHidden = false
@@ -118,7 +118,7 @@ extension ZPlaceholderTextView {
     }
     
     @objc func textViewDidChange(_ notification: Notification) {
-        if self.text.characters.count > 0 {
+        if self.text.count > 0 {
             placeholderLabel.isHidden = true
         }else {
             placeholderLabel.isHidden = false
@@ -126,7 +126,7 @@ extension ZPlaceholderTextView {
     }
     
     @objc func textViewDidEndEditing(_ notification: Notification) -> Void {
-        if self.text.characters.count > 0 {
+        if self.text.count > 0 {
             placeholderLabel.isHidden = true
         }else {
             placeholderLabel.isHidden = false
