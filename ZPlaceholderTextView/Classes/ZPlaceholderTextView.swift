@@ -99,6 +99,7 @@ open class ZPlaceholderTextView: UITextView {
 
 private extension ZPlaceholderTextView {
     func setup() {
+        backgroundColor = .white
         placeholderLabel.font = self.font
         addSubview(placeholderLabel)
         
